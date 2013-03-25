@@ -1,4 +1,7 @@
-# Usage
+# What?
+This little jquery plugin draws my logo to a canvas element or set it as canvas background to another html element.
+
+# How?
 
     $('#element').kolibriLogo({
         height:         1000,   // sets the height of the logo
@@ -12,6 +15,12 @@ If not, a new canvas is created, and added as background to the element.
 
 (Only tested with id-selector)
 
-# License
+# Why?
+Training. ;)
+
+# What else?
+You need jQuery and jCanvas to run this script.
+
+# May I?
 
 http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en
