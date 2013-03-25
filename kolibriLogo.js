@@ -8,7 +8,7 @@
 
     var defaults = { 
         height:         1000, 
-        width:          1000, 
+        width:          null, 
         color:          '#fff',
     };
 
@@ -19,10 +19,12 @@
 
             $this.height = options.height;
             $this.color = options.color;
+
+            width = options.width ? options.width : $this.height;
             
             // width has to be higher than width
-            $this.width = $this.height < options.width ? 
-                options.width :
+            $this.width = $this.height < width ? 
+                width :
                 $this.height;
             
             // when selected element is not a canvas, assign canvas as background

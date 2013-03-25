@@ -1,6 +1,8 @@
 # What?
 This little jquery plugin draws my logo to a canvas element or set it as canvas background to another html element.
 
+Example: http://jsfiddle.net/usuuw/
+
 # How?
 
     $('#element').kolibriLogo({
