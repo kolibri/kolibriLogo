@@ -2,12 +2,13 @@
  * Draws kolibri logo as canvas.
  * requires jcanvas and jquery
  * 
+ * CAUTION: background works only, if you select element via id. $('#element').kolibriLogo({ 'asBackground': true })
  */
 (function( $ ){
 
     var defaults = { 
-        height:          1000, 
-        stretchWidth:   1000, 
+        height:         1000, 
+        width:          1000, 
         color:          '#fff',
     };
 
@@ -19,16 +20,16 @@
             $this.height = options.height;
             $this.color = options.color;
             
-            // stretchWidth has to be higher than width
-            $this.stretchWidth = $this.height < options.stretchWidth ? 
-                options.stretchWidth :
+            // width has to be higher than width
+            $this.width = $this.height < options.width ? 
+                options.width :
                 $this.height;
             
             // when selected element is not a canvas, assign canvas as background
             $this.canvasElement = $this;
             if(!$this.is('canvas')) {
                 var canvasId = 'canvas_' + (1 + Math.floor(Math.random() * 3137));
-                $('body').append('<canvas id="' + canvasId + '" width="' + $this.stretchWidth + '" height="' + $this.height + '" style="display: none;"></canvas>');
+                $('body').append('<canvas id="' + canvasId + '" width="' + $this.width + '" height="' + $this.height + '" style="display: none;"></canvas>');
                 $this.canvasElement = $('#' + canvasId);
                 $this.css('background-image', '-moz-element(#' + canvasId + ')');
             }
@@ -52,10 +53,10 @@
 
             $this.canvasElement.drawRect({  // body / top horizontal line
               x: 0, y: 0,
-              width: $this.stretchWidth,
+              width: $this.width,
               height: bodyWidth
             }).drawRect({  // beak / right vertical line
-              x: $this.stretchWidth - bodyWidth, y: 0,
+              x: $this.width - bodyWidth, y: 0,
               width: bodyWidth,
               height: $this.height
             });
@@ -77,8 +78,8 @@
             
             var eyeWidth = $this.height * 0.060;
             var eyeHeight = $this.height * 0.070;
-            var eyeX = ($this.stretchWidth > $this.height) ?
-                ( $this.stretchWidth - $this.height * (1 - 0.870) ) :
+            var eyeX = ($this.width > $this.height) ?
+                ( $this.width - $this.height * (1 - 0.870) ) :
                 ( $this.height * 0.870 ) ;
             var eyeY = $this.height * 0.065;
 

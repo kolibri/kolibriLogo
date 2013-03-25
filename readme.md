@@ -16,10 +16,14 @@ If not, a new canvas is created, and added as background to the element.
 (Only tested with id-selector)
 
 # Why?
-Training. ;)
+Training! ;)
 
 # What else?
 You need jQuery and jCanvas to run this script.
+
+http://jquery.com/
+
+http://calebevans.me/projects/jcanvas/
 
 # May I?
 
